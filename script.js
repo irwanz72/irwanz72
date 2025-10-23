@@ -83,3 +83,20 @@ window.addEventListener("load", () => {
     }, 500); // waktu animasi fade-out
   }, 1000); // 3000 = 3 detik
 });
+
+const tombolAwal = document.getElementById('btnMore');
+const tempat = document.getElementById('Btnyo');
+
+let sudahAda = false; // penanda agar tombol baru tidak dibuat lagi
+
+tombolAwal.addEventListener('click', function() {
+  if (!sudahAda) {
+    const tombolBaru = document.createElement('button');
+    tombolBaru.textContent = 'Next ->';
+    tombolBaru.addEventListener('click', function() {
+      alert('Yakin Kehalaman Selanjutnya? ');
+    });
+    tempat.appendChild(tombolBaru);
+    sudahAda = true; // ubah status agar tidak bisa buat lagi
+  }
+});
